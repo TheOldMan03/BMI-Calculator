@@ -15,6 +15,8 @@ class _InputPageState extends State<InputPage> {
   Color maleColour=inactiveColour;
   Color femaleColour=inactiveColour;
 
+  int height=180;
+
   void changeColour(Gender g) {
     //gender=1 for male and gender=2 for female
     if (g==Gender.male) {
@@ -121,18 +123,33 @@ class _InputPageState extends State<InputPage> {
                     ),
 
 
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children:  [
-
-                        Column(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const Text('Height',textAlign: TextAlign.center,style: TextStyle(fontSize: 18.0,color: Color(0xFF8D8E98))),
+                        const SizedBox(height: 10.0),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text('Height',style:TextStyle(fontSize: 18.0,color: Color(0xFF8D8E98))),
-                            Text("180",style: TextStyle(fontSize: 50.0,fontWeight: FontWeight.w900,)),
-                          ],//children
-                        ),
-                        const Text("cm",style: TextStyle(fontSize: 18.0,color:Color(0xFF8D8E98)))
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+
+                          children: [
+                            Text(height.toString(),style: const TextStyle(fontSize:50.0,fontWeight:FontWeight.w900)),
+                            const Text('cm',style: TextStyle(fontSize: 18.0,color: Color(0xFF8D8E98)))
+                        ],),
+
+                        Slider(
+                        value: height.toDouble(),
+                        min:120.0,
+                        max: 220.0,
+                        activeColor:const  Color(0xFFEB1555),
+                        inactiveColor: const Color(0xFF8D8E98),
+                        onChanged: (double newVal){
+                          setState(() {
+                            height=newVal.round();
+                          });
+                        }
+                        )
                       ],
                     )
                 ),
