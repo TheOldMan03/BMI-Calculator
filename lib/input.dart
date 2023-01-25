@@ -197,7 +197,10 @@ class _InputPageState extends State<InputPage> {
                                     ),
                                     onPressed: (){
                                       setState(() {
-                                        weight--;
+                                        if(weight==20){}
+                                        else {
+                                          weight--;
+                                        }
                                       });
                                     },
                                     child: const Icon(FontAwesomeIcons.minus)
@@ -253,7 +256,10 @@ class _InputPageState extends State<InputPage> {
                                       ),
                                       onPressed: (){
                                         setState(() {
+                                        if(age==18){}
+                                        else {
                                           age--;
+                                        }
                                         });
                                       },
                                       child: const Icon(FontAwesomeIcons.minus)
@@ -268,7 +274,10 @@ class _InputPageState extends State<InputPage> {
                                       ),
                                       onPressed: (){
                                         setState(() {
-                                          age++;
+                                          if(age==100){}
+                                          else {
+                                            age++;
+                                          }
                                         });
                                       },
                                       child: const Icon(FontAwesomeIcons.plus)
