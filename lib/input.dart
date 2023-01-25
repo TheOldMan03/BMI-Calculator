@@ -16,6 +16,8 @@ class _InputPageState extends State<InputPage> {
   Color femaleColour=inactiveColour;
 
   int height=180;
+  int weight=80;
+  int age=20;
 
   void changeColour(Gender g) {
     //gender=1 for male and gender=2 for female
@@ -176,6 +178,51 @@ class _InputPageState extends State<InputPage> {
                               borderRadius: BorderRadius.circular(10.0),
                               color:const Color(0xFF1D1E33)
                           ),
+                          child: Column(
+                            children: [
+                              const Text("Weight",style: TextStyle(fontSize: 18.0,color: Color(0xFF8D8E98))),
+                              Text(weight.toString(),style:const TextStyle(fontSize:50.0,fontWeight:FontWeight.w900)),
+
+                              Row(
+                                children:[
+
+                                  const SizedBox(width: 15.0),
+                                  TextButton(
+                                    style: const ButtonStyle(
+                                      backgroundColor:MaterialStatePropertyAll<Color>(Colors.white),
+                                      shape: MaterialStatePropertyAll<CircleBorder>(
+                                        CircleBorder()
+                                      )
+
+                                    ),
+                                    onPressed: (){
+                                      setState(() {
+                                        weight--;
+                                      });
+                                    },
+                                    child: const Icon(FontAwesomeIcons.minus)
+                                  ),
+                                  TextButton(
+                                      style: const ButtonStyle(
+                                          backgroundColor:MaterialStatePropertyAll<Color>(Colors.white),
+                                          shape: MaterialStatePropertyAll<CircleBorder>(
+                                              CircleBorder()
+                                          )
+
+                                      ),
+                                      onPressed: (){
+                                        setState(() {
+                                          weight++;
+                                        });
+                                      },
+                                      child: const Icon(FontAwesomeIcons.plus)
+                                  )
+                                ],
+                              )
+                            ],
+
+
+                          ),
                         )
                     ),
 
@@ -186,6 +233,52 @@ class _InputPageState extends State<InputPage> {
                               borderRadius: BorderRadius.circular(10.0),
                               color:const Color(0xFF1D1E33)
                           ),
+
+                          child: Column(
+                            children: [
+                              const Text("Age",style: TextStyle(fontSize: 18.0,color: Color(0xFF8D8E98))),
+                              Text(age.toString(),style:const TextStyle(fontSize:50.0,fontWeight:FontWeight.w900)),
+
+                              Row(
+                                children:[
+
+                                  const SizedBox(width: 15.0),
+                                  TextButton(
+                                      style: const ButtonStyle(
+                                          backgroundColor:MaterialStatePropertyAll<Color>(Colors.white),
+                                          shape: MaterialStatePropertyAll<CircleBorder>(
+                                              CircleBorder()
+                                          )
+
+                                      ),
+                                      onPressed: (){
+                                        setState(() {
+                                          age--;
+                                        });
+                                      },
+                                      child: const Icon(FontAwesomeIcons.minus)
+                                  ),
+                                  TextButton(
+                                      style: const ButtonStyle(
+                                          backgroundColor:MaterialStatePropertyAll<Color>(Colors.white),
+                                          shape: MaterialStatePropertyAll<CircleBorder>(
+                                              CircleBorder()
+                                          )
+
+                                      ),
+                                      onPressed: (){
+                                        setState(() {
+                                          age++;
+                                        });
+                                      },
+                                      child: const Icon(FontAwesomeIcons.plus)
+                                  )
+                                ],
+                              )
+                            ],
+
+                          ),
+
                         )
                     ),
 
