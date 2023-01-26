@@ -1,5 +1,8 @@
+import 'package:bmi/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'bottom_button.dart';
+
 const activeColour=Color(0xFF1D1E33);
 const inactiveColour=Color(0xFF111328);
 
@@ -138,28 +141,28 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             Text(height.toString(),style: const TextStyle(fontSize:50.0,fontWeight:FontWeight.w900)),
                             const Text('cm',style: TextStyle(fontSize: 18.0,color: Color(0xFF8D8E98)))
-                        ],),
+                          ],),
 
                         SliderTheme(
                           data: const SliderThemeData(
-                            thumbColor: Color(0xFFEB1555),
-                            activeTrackColor: Colors.white,
-                            inactiveTrackColor: Color(0xFF8D8E98),
-                            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
-                            overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
-                            overlayColor: Color(0x29EB1555)
+                              thumbColor: Color(0xFFEB1555),
+                              activeTrackColor: Colors.white,
+                              inactiveTrackColor: Color(0xFF8D8E98),
+                              thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                              overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
+                              overlayColor: Color(0x29EB1555)
                           ),
 
                           child: Slider(
-                          value: height.toDouble(),
-                          min:120.0,
-                          max: 220.0,
+                              value: height.toDouble(),
+                              min:120.0,
+                              max: 220.0,
 
-                          onChanged: (double newVal){
-                            setState(() {
-                              height=newVal.round();
-                            });
-                          }
+                              onChanged: (double newVal){
+                                setState(() {
+                                  height=newVal.round();
+                                });
+                              }
                           ),
                         )
                       ],
@@ -188,22 +191,22 @@ class _InputPageState extends State<InputPage> {
 
                                   const SizedBox(width: 15.0),
                                   TextButton(
-                                    style: const ButtonStyle(
-                                      backgroundColor:MaterialStatePropertyAll<Color>(Colors.white),
-                                      shape: MaterialStatePropertyAll<CircleBorder>(
-                                        CircleBorder()
-                                      )
+                                      style: const ButtonStyle(
+                                          backgroundColor:MaterialStatePropertyAll<Color>(Colors.white),
+                                          shape: MaterialStatePropertyAll<CircleBorder>(
+                                              CircleBorder()
+                                          )
 
-                                    ),
-                                    onPressed: (){
-                                      setState(() {
-                                        if(weight==20){}
-                                        else {
-                                          weight--;
-                                        }
-                                      });
-                                    },
-                                    child: const Icon(FontAwesomeIcons.minus)
+                                      ),
+                                      onPressed: (){
+                                        setState(() {
+                                          if(weight==20){}
+                                          else {
+                                            weight--;
+                                          }
+                                        });
+                                      },
+                                      child: const Icon(FontAwesomeIcons.minus)
                                   ),
                                   TextButton(
                                       style: const ButtonStyle(
@@ -256,10 +259,10 @@ class _InputPageState extends State<InputPage> {
                                       ),
                                       onPressed: (){
                                         setState(() {
-                                        if(age==18){}
-                                        else {
-                                          age--;
-                                        }
+                                          if(age==18){}
+                                          else {
+                                            age--;
+                                          }
                                         });
                                       },
                                       child: const Icon(FontAwesomeIcons.minus)
@@ -295,12 +298,8 @@ class _InputPageState extends State<InputPage> {
               ),
               ),
 
-              Container(
-                color:const Color(0xFFEB1555),
-                margin:const EdgeInsets.only(top:10.0),
-                width:double.infinity,
-                height: 80.0,
-              )
+              BottomButton(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>Results_Page()));} , title: "Calculate")
+
             ]));
   }
 }
