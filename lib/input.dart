@@ -1,7 +1,8 @@
-import 'package:bmi/results_page.dart';
+import 'package:bmi/Result_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bottom_button.dart';
+
 
 const activeColour=Color(0xFF1D1E33);
 const inactiveColour=Color(0xFF111328);
@@ -298,7 +299,16 @@ class _InputPageState extends State<InputPage> {
               ),
               ),
 
-              BottomButton(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>Results_Page()));} , title: "Calculate")
+
+              Bottom_Button(buttonTitle: "Calculate",
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=>ResultPage())
+                  );
+                }
+              )
+
 
             ]));
   }
