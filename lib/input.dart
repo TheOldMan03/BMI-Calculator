@@ -1,3 +1,4 @@
+import 'package:bmi/Result_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 const activeColour=Color(0xFF1D1E33);
@@ -298,6 +299,10 @@ class _InputPageState extends State<InputPage> {
               GestureDetector(
                 onTap: (){
                   setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=>ResultPage())
+                    );
                   });
                 },
                 child: Container(
