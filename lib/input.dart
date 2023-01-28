@@ -298,12 +298,10 @@ class _InputPageState extends State<InputPage> {
 
               GestureDetector(
                 onTap: (){
-                  setState(() {
-                    Navigator.push(
+                  Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context)=>ResultPage())
-                    );
-                  });
+                  );
                 },
                 child: Container(
                   color:const Color(0xFFEB1555),
