@@ -1,6 +1,9 @@
 import 'package:bmi/Result_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'bottom_button.dart';
+
+
 const activeColour=Color(0xFF1D1E33);
 const inactiveColour=Color(0xFF111328);
 
@@ -296,22 +299,15 @@ class _InputPageState extends State<InputPage> {
               ),
               ),
 
-              GestureDetector(
+              Bottom_Button(buttonTitle: "Calculate",
                 onTap: (){
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context)=>ResultPage())
                   );
-                },
-                child: Container(
-                  color:const Color(0xFFEB1555),
-                  margin:const EdgeInsets.only(top:10.0),
-                  padding: const EdgeInsets.only(top: 20.0),
-                  width:double.infinity,
-                  height: 80.0,
-                  child: const Text("Calculate",textAlign: TextAlign.center,style: TextStyle(fontSize: 25.0,fontWeight: FontWeight.bold)),
-                ),
+                }
               )
+
             ]));
   }
 }
