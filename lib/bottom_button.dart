@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class Bottom_Button extends StatelessWidget {
 
   final String buttonTitle;
@@ -7,9 +8,11 @@ class Bottom_Button extends StatelessWidget {
 
   Bottom_Button({required this.buttonTitle,required this.onTap});
 
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+
       onTap:onTap,
       child: Container(
         color:const Color(0xFFEB1555),
@@ -18,6 +21,7 @@ class Bottom_Button extends StatelessWidget {
         width:double.infinity,
         height: 80.0,
         child: Text(buttonTitle,textAlign: TextAlign.center,style: const TextStyle(fontSize: 25.0,fontWeight: FontWeight.bold)),
+
       ),
     );
   }
