@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'bottom_button.dart';
 
 class Results_Page extends StatelessWidget {
-  const Results_Page({Key? key}) : super(key: key);
+
+  final String bmiResults;
+  final String resultText;
+  final String inter;
+
+  Results_Page({required this.bmiResults,required this.resultText,required this.inter});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +21,8 @@ class Results_Page extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
+              padding: const EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: const Text("Your Results",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 50.0),),
             ),
           ),
@@ -40,7 +47,6 @@ class Results_Page extends StatelessWidget {
             )
     ,
           ),
-          BottomButton(title: "Re-Calculate",onTap:() {Navigator.pop(context);})
         ],
 
 

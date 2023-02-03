@@ -1,7 +1,8 @@
-import 'package:bmi/Result_Page.dart';
+import 'package:bmi/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'bottom_button.dart';
+import 'calculator_brain.dart';
 
 
 const activeColour=Color(0xFF1D1E33);
@@ -302,9 +303,10 @@ class _InputPageState extends State<InputPage> {
 
               Bottom_Button(buttonTitle: "Calculate",
                 onTap: (){
+                Calculator_brain cal=Calculator_brain(height: height, weight: weight);
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context)=>ResultPage())
+                      MaterialPageRoute(builder: (context)=>Results_Page(bmiResults: cal.BMICalc(), resultText: cal.Result(), inter: cal.Interpretation()))
                   );
                 }
               )
