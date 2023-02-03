@@ -38,15 +38,18 @@ class Results_Page extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  Text("Normal",style: TextStyle(fontSize: 22.0,fontWeight: FontWeight.bold,color: Color(0xFF24D876))),
-                  Text("18.3",style: TextStyle(fontSize: 100.0,fontWeight: FontWeight.bold)),
-                  Text("You should suck on these Balls! Ha Ligma",textAlign: TextAlign.center,style: TextStyle(fontSize: 22.0))
+                children:  [
+                  Text(resultText,style: const TextStyle(fontSize: 22.0,fontWeight: FontWeight.bold,color: Color(0xFF24D876))),
+                  Text(bmiResults,style: const TextStyle(fontSize: 100.0,fontWeight: FontWeight.bold)),
+                  Text(inter,textAlign: TextAlign.center,style: TextStyle(fontSize: 22.0))
                 ],
               ),
             )
     ,
           ),
+          Bottom_Button(buttonTitle: "Re-Calculate", onTap: (){
+            Navigator.pop(context);
+          })
         ],
 
 
